@@ -1,5 +1,3 @@
-# url = 'https://bitly.is/3RxqFm3'
-
 import requests
 import os
 import argparse
@@ -54,15 +52,12 @@ def main():
     parser = argparse.ArgumentParser('Введите ссылку:')
     parser.add_argument("link", help='')
     args = parser.parse_args()
-    # user_input = input('Введите ссылку:')
     user_input = args.link
     token = os.environ["BITLY_TOKEN"]
-    # try:
     if is_bitlink(token, user_input):
         print('По вашей ссылки прошли:',
               count_clicks(token, user_input), 'раза', end='\n')
     else:
-    # except requests.exceptions.HTTPError:
         print('Битлинк', shorten_link(token, user_input))
 
 
