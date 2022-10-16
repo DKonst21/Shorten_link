@@ -4,8 +4,6 @@ import argparse
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 
-load_dotenv()
-
 
 def shorten_link(token, user_input):
     headers = {
@@ -62,6 +60,7 @@ def main():
 
 
 if __name__ == "__main__":
+    load_dotenv()
     main()
 
 
