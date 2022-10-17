@@ -5,13 +5,14 @@ Getting the number of clicks on a short link.
 To run the application, you need to get a token from [api-ssl.bitly.com](https://api-ssl.bitly.com). Instructions for obtaining are on this site. The token name BITLY_TOKEN contains the value of the API-key.
 
 ### How to get
-Launch via terminal: ```python main.py https://api-ssl.bitly.com```
+Launch via terminal: 
+####```python main.py https://api-ssl.bitly.com```
 
 ## How to install
 
 Python3 should already be installed. Use pip (or pip3, if there is a conflict with Python2) to install dependencies:
 
-```pip install -r requirements.txt```
+####```pip install -r requirements.txt```
 
 it is recommended to use [virtualenv/venv](https://docs.python.org/3/library/venv.html) for project isolation
 
