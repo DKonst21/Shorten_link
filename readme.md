@@ -2,10 +2,10 @@
 Getting the number of clicks on a short link.
 
 ## Setting up the environment.
-To run the application, you need to get a token from [api-ssl.bitly.com](https://api-ssl.bitly.com). Instructions for obtaining are on this site. The token name BITLY_TOKEN contains the value of the API-key.
+To run the application, you need to get a token from [app.bitly.com/settings/api/](https://app.bitly.com/settings/api/). In the "access token" section, enter the password for your account on the site and click the button "generate key". The token name BITLY_TOKEN contains the value of the API-key and is located in .env.
 
-### How to get
-Launch via terminal: 
+### How to get a short link through terminal
+Launch through terminal: 
 #### ```python main.py https://api-ssl.bitly.com```
 
 ## How to install
