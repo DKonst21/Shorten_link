@@ -16,6 +16,12 @@ Python3 should already be installed. Use pip (or pip3, if there is a conflict wi
 
 it is recommended to use [virtualenv/venv](https://docs.python.org/3/library/venv.html) for project isolation
 
+### Example for start project and answer
+```python main.py https://api-ssl.bitly.com```
+
+```Битлинк https://bitly.is/3RxqFm3```
+
+
 ## Project Goals
 This code was written for educational purposes as part of an online course for web developers at 
 [dvmn.org](https://dvmn.org/).
