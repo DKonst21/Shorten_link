@@ -11,7 +11,7 @@ def shorten_link(token, user_input):
      }
     long_url = {"long_url": user_input}
     response = requests.post(
-        "{url}/v4/shorten".format(url=user_input),
+        "{url}".format(url=user_input),
         headers=headers,
         json=long_url
      )
