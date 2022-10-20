@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 
 def shorten_link(token, user_input):
     headers = {
-        'Authorization': "Bearer {token}".format(token = token),
+        'Authorization': "Bearer {token}".format(token=token),
      }
     long_url = {"long_url": user_input}
     response = requests.post(
-        "{url}".format(url=user_input),
+        "{url}/v4/shorten".format(url=user_input),
         headers=headers,
         json=long_url
      )
@@ -31,11 +31,9 @@ def count_clicks(token, user_input):
     net_loc = disassembled_url.netloc
     path = disassembled_url.path
     response = requests.get(
-        "https://api-ssl.bitly.com/v4/bitlinks/{net_loc{path}/clicks/summary"
-        .format(net_loc = net_loc, path = path),
-        headers = headers,
-        params = params
-     )
+        "https://api-ssl.bitly.com/v4/bitlinks/{net_loc}{path}/clicks/summary"
+        .format(net_loc=net_loc, path=path),
+        headers=headers, params=params)
     response.raise_for_status()
     clicks_count = response.json()['total_clicks']
 
@@ -44,13 +42,14 @@ def count_clicks(token, user_input):
 
 def is_bitlink(token, user_input):
     headers = {
-        'Authorization': "Bearer {token}".format(token = token),
+        'Authorization': "Bearer {token}".format(token=token),
      }
     disassembled_url = urlparse(user_input)
     net_loc = disassembled_url.netloc
     path = disassembled_url.path
     response = requests.get(
-        "https://api-ssl.bitly.com/v4/bitlinks/{net_loc}{path}".format(net_loc=net_loc, path=path),
+        "https://api-ssl.bitly.com/v4/bitlinks/{net_loc}{path}"
+        .format(net_loc=net_loc,path=path),
         headers=headers
      )
     return response.ok
@@ -73,4 +72,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
