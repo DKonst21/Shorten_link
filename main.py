@@ -9,9 +9,9 @@ def shorten_link(token, user_input):
     headers = {
         'Authorization': "Bearer {token}".format(token=token),
      }
-    long_url = {"long_url": "https://api-ssl.bitly.com/v4/bitlinks"}
+    long_url = {"long_url": user_input}
     response = requests.post(
-        "{url}/v4/shorten".format(url=user_input),
+        "https://api-ssl.bitly.com/v4/shorten",
         headers=headers,
         json=long_url
      )
